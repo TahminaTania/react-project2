@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { FaUserAlt } from 'react-icons/fa';
 import { useUserContext } from '../Context/userContext';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
   const {logIn}=useUserContext()
+  const navigate = useNavigate()
+ 
 
   const [inputs, setInputs] = useState({});
 
@@ -23,6 +25,7 @@ export default function Login() {
     logIn(inputs.username);
     setInputs({})
     console.log(logIn, "inputs now")
+    navigate('/')
   }
 
  
