@@ -39,7 +39,7 @@ export default function Register() {
           <input className="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password" />
       </div>
 
-      <button type="submit" className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Sign Up</button>
+      <button type="submit" className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"><NavLink to={'/'}>Sign Up</NavLink></button>
       <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">Already Have an Account ? <NavLink to={"/login"} className='text-blue-400 font-bold'> Log In</NavLink></span>
       </form>
 

@@ -22,8 +22,10 @@ export default function Login() {
      event.preventDefault();
     logIn(inputs.username);
     setInputs({})
- 
+    console.log(logIn, "inputs now")
   }
+
+ 
   // console.log(inputs, "inputs now")
 
   return (
