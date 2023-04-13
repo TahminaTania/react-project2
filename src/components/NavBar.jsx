@@ -15,8 +15,8 @@ function Navbar() {
     console.log(user.IsGuest, "=TF")
 
     return (
-       <div className='  bg-white border-b-4  w-full'>    
-            <div className='z-10 grid grid-cols-4 gap-2 h-20  w-full mx-auto  px-4 text-blue-800'>
+       <div className=' z-10 fixed  bg-white border-b-4  w-full'>    
+            <div className='grid grid-cols-4 gap-2 h-20 w-full mx-auto  px-4 text-blue-800'>
             {!user.IsGuest?
             ( 
                 <div className='flex flex-row my-auto'>

@@ -12,6 +12,7 @@ import Register from './components/Registration';
 import Login from './components/LogIn';
 import Footer from './components/Footer';
 import Home from './Pages/Home';
+import SingleRoom from './components/SingleRoom';
 
 
 const Layout =()=>{
@@ -30,12 +31,16 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children:[
       {
-        path: "/",
+        path: "/home",
         element: <div><Home/></div>,
       },
       {
         path: "/blog",
         element: <div>Blog</div>,
+      },
+      {
+        path: "/",
+        element: <div><SingleRoom/></div>,
       },
       {
         path: "/login",
