@@ -15,8 +15,8 @@ function Navbar() {
     console.log(user.IsGuest, "=TF")
 
     return (
-       <div className='  bg-blue-900 max-w-[1800]  w-full'>    
-            <div className='z-10 grid grid-cols-4 gap-2 h-20 w-full mx-auto  px-4 text-white'>
+       <div className='  bg-white border-b-4  w-full'>    
+            <div className='z-10 grid grid-cols-4 gap-2 h-20  w-full mx-auto  px-4 text-blue-800'>
             {!user.IsGuest?
             ( 
                 <div className='flex flex-row my-auto'>
@@ -31,7 +31,7 @@ function Navbar() {
                     <div className='hidden md:flex justify-between'>
                             <NavLink to={'/'} className='p-4 font-bold'>Home</NavLink>
                             <NavLink to={'/blog'} className='p-4 font-bold'>Blog</NavLink>
-                            <NavLink to={'/services'} className='p-4 font-bold'>Services</NavLink>
+                            <NavLink to={'/reals'} className='p-4 font-bold'>Reals</NavLink>
                             <NavLink to={'/about'} className='p-4 font-bold'>About</NavLink>
                             <NavLink to={'/contact'} className='p-4 font-bold'>Contact</NavLink>
                     </div>
@@ -56,7 +56,7 @@ function Navbar() {
             </div>
 
 
-            <div onClick={handleMenu} className='block md:hidden  float-right mt-[-10%] text-white' >
+            <div onClick={handleMenu} className='block md:hidden  float-right sm:mt-[-50px] xsm:mt-[-50px] text-blue-900' >
                 {menu ? <AiOutlineClose size={35}/> : <AiOutlineMenu size={35} />}
             </div>
             <div>
@@ -65,7 +65,7 @@ function Navbar() {
                            
                             <NavLink to={"/"} className='p-4 border-b border-gray-600 text-white' onClick={(e)=>Setmenu(false)}>Home</NavLink >
                             <NavLink to={"/blog"} className='p-4 border-b border-gray-600' onClick={(e)=>Setmenu(false)}>Blog</NavLink >
-                            <NavLink to={"/services"} className='p-4 border-b border-gray-600' onClick={(e)=>Setmenu(false)}>Services</NavLink >
+                            <NavLink to={"/reals"} className='p-4 border-b border-gray-600' onClick={(e)=>Setmenu(false)}>Reals</NavLink >
                             <NavLink to={"/about"} className='p-4 border-b border-gray-600' onClick={(e)=>Setmenu(false)}>About</NavLink >
                             <NavLink to={"/contact"} className='p-4' onClick={(e)=>Setmenu(false)}>Contact</NavLink >
                     </div>
