@@ -15,7 +15,7 @@ export default function HomeComp() {
             </div>
         </div>
 
-        <div className='flex flex-row justify-between mt-[50px] md:w-[50%] xsm:w-[80%] mx-auto'>
+        <div className='flex flex-row justify-between mt-[50px] md:w-[50%] sm:w-[90%] xsm:w-[95%] mx-auto'>
             <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full  px-4 py-1'>Hotel</button></div>
             <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1'>Apartment</button></div>
             <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1'>Airbnb</button></div>

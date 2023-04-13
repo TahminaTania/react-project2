@@ -18,9 +18,8 @@ function Footer() {
                             <button  class="relative bg-green-500 text-white rounded-md font-medium w-[150px] h-full my-6 ml-3 px-6 py-3 inline-flex items-center justify-center hover:font-bold duration-[2s]  overflow-hidden text-medium group">
                             <span class="absolute w-0  transition-all duration-700 ease-out bg-purple-500 rounded group-hover:w-full group-hover:h-full"></span>
                             <span class="relative">Subscribe</span>
-                            </button></div>
-                           {/*  <button className=' bg-green-500 text-white rounded-md font-medium w-[150px] h-full my-6 ml-3 px-6 py-3'>Subscribe</button> */}
-                           {/* copy pasted this hover effect from here---> https://devdojo.com/tailwindcss/buttons#_ */}
+                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
