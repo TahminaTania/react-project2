@@ -25,9 +25,9 @@ export default function HomeComp() {
         {
             hotelData.map((hotel)=>{
             return(
-            <div key={hotel.id}> 
-            <HotelRooms hotel={hotel}/>
-            </div>
+            // <div key={hotel.id}> 
+              <HotelRooms hotel={hotel} key={hotel.id}/>
+            // </div>
             )
             })
         }

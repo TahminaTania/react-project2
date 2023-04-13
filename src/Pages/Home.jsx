@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className='w-full h-full bg-cyan-100 py-20'>
-     <HomeComp/>
+     <HomeComp />
 
     </div>
   )

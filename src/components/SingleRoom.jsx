@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import { hotelData } from '../DataSet'
+import { useParams } from 'react-router-dom';
 
 export default function SingleRoom() {
-    const hotel=hotelData[1]
+    
+    const {Hotelid} = useParams()
 
+    const hotel=hotelData[Hotelid-1]
     const [showMore, setShowMore] = useState(false);
+    console.log(hotel,"hotelss....")
   return (
     <div className='pt-20'>
         <section class="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage:`url(${hotel.image})` }}>

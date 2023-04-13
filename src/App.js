@@ -16,6 +16,8 @@ import SingleRoom from './components/SingleRoom';
 
 
 const Layout =()=>{
+
+
   return(
     <>
     <Navbar/>
@@ -31,15 +33,15 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children:[
       {
-        path: "/home",
-        element: <div><Home/></div>,
+        path: "/",
+        element: <div><Home /></div>,
       },
       {
         path: "/blog",
         element: <div>Blog</div>,
       },
       {
-        path: "/",
+        path: "/hotel/:Hotelid",
         element: <div><SingleRoom/></div>,
       },
       {

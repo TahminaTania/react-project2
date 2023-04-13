@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function HotelRooms({hotel}) {
   return (
@@ -10,7 +11,7 @@ export default function HotelRooms({hotel}) {
       <div class="flex flex-wrap items-center ">
         <div class="grow-0  shrink-0 basis-auto block lg:flex w-full lg:w-6/12 xl:w-4/12">
           <img src={hotel.image} alt="room"
-            class="w-full object-cover rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
+            class="w-full h-[500px] m-5 object-cover rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg " />
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
           <div class="px-6 py-12 md:px-12">
@@ -22,7 +23,7 @@ export default function HotelRooms({hotel}) {
             <p class="font-semibold mb-4">{hotel.location}</p>
             <p class="text-gray-500 mb-6">{hotel.details}</p>
              <div>
-              <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>See Details</button>
+              <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' ><NavLink to={`/hotel/${hotel.id}`}>See Details</NavLink></button>
              </div>
           </div>
         </div>
