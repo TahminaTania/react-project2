@@ -2,7 +2,10 @@ import React from 'react'
 import { hotelData } from '../DataSet'
 import HotelRooms from './HotelRooms'
 
-export default function HomeComp() {
+export default function HomeComp({categories,filterItems,menuItem}) {
+ 
+console.log(categories)
+
 
   return (
     <div>
@@ -16,14 +19,14 @@ export default function HomeComp() {
         </div>
 
         <div className='flex flex-row justify-between mt-[50px] md:w-[50%] sm:w-[90%] xsm:w-[95%] mx-auto'>
-            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full  px-4 py-1'>Hotel</button></div>
-            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1'>Apartment</button></div>
-            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1'>Airbnb</button></div>
-            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full px-4 py-1'>Motel</button></div>
+            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full  px-4 py-1' onClick={()=> filterItems("Hotel")}>Hotel</button></div>
+            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1' onClick={()=> filterItems("Apartment")}>Apartment</button></div>
+            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1' onClick={()=> filterItems("Airbnb")}>Airbnb</button></div>
+            <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full px-4 py-1' onClick={()=> filterItems("Motel")}>Motel</button></div>
         </div>
     <div>
         {
-            hotelData.map((hotel)=>{
+            menuItem.map((hotel)=>{
             return(
             // <div key={hotel.id}> 
               <HotelRooms hotel={hotel} key={hotel.id}/>

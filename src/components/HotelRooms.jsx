@@ -16,6 +16,7 @@ export default function HotelRooms({hotel}) {
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
           <div class="px-6 py-12 md:px-12">
             <h2 class="text-3xl font-bold mb-2 text-blue-600">{hotel.title}</h2>
+            <p>{hotel.category}</p>
             <div className='flex flex-wrap items-center justify-center md:justify-start'>
                 <p class="font-semibold mb-4 text-gray-500">{hotel.email} |</p>
                 <p class="font-semibold mb-4  text-gray-500">| {hotel.phone}</p>
