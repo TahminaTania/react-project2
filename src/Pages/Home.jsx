@@ -16,11 +16,30 @@ export default function Home() {
     setMenuItems(newItems)
 
   }
+
+const [searchVal, setSearchVal] = useState("");
+function handleSearchClick() {
+
+  console.log("handle search clicked")
+
+    if (searchVal === "") { 
+      setMenuItems(menuItem);
+       return; 
+      }
+    const filterBySearch = menuItem.filter((item) => {
+        if (item.title.toLowerCase().includes(searchVal.toLowerCase() )|| item.details.toLowerCase().includes(searchVal.toLowerCase() )
+            ) {
+               return item; 
+              }
+    })
+    setMenuItems(filterBySearch);
+}
+
      const {logIn,user}=useUserContext()
 
   return (
     <div className='w-full h-full bg-cyan-100 py-20'>
-     <HomeComp filterItems={filterItems} categories={categories} menuItem={menuItem} />
+     <HomeComp filterItems={filterItems} categories={categories} menuItem={menuItem} handleSearchClick={handleSearchClick}setSearchVal={setSearchVal} />
 
     </div>
   )

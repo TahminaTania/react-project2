@@ -2,27 +2,10 @@ import React, { useState } from 'react'
 import { hotelData } from '../DataSet'
 import HotelRooms from './HotelRooms'
 
-export default function HomeComp({categories,filterItems,menuItem}) {
+export default function HomeComp({categories,filterItems,menuItem,handleSearchClick,setSearchVal}) {
 
 console.log(categories)
-const [products, setProducts] = useState(menuItem);
-const [searchVal, setSearchVal] = useState("");
-function handleSearchClick() {
 
-  console.log("handle search clicked")
-
-    if (searchVal === "") { 
-      setProducts(menuItem);
-       return; 
-      }
-    const filterBySearch = menuItem.filter((item) => {
-        if (item.title.toLowerCase().includes(searchVal.toLowerCase() )|| item.details.toLowerCase().includes(searchVal.toLowerCase() )
-            ) {
-               return item; 
-              }
-    })
-    setProducts(filterBySearch);
-}
 
 
   return (
@@ -42,9 +25,11 @@ function handleSearchClick() {
             <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full mx-2 px-4 py-1' onClick={()=> filterItems("Airbnb")}>Airbnb</button></div>
             <div><button className=' bg-gray-400 text-gray-700 hover:bg-blue-900 hover:text-white rounded-full font-medium  h-full px-4 py-1' onClick={()=> filterItems("Motel")}>Motel</button></div>
         </div>
+        
     <div>
+     <div className=' text-center mt-20 '>Total: <span className='font-bold'>{menuItem.length}</span></div>
         {
-            products.map((hotel)=>{
+            menuItem.map((hotel)=>{
             return(
             // <div key={hotel.id}> 
               <HotelRooms hotel={hotel} key={hotel.id}/>
