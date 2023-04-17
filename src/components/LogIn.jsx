@@ -54,7 +54,7 @@ export default function Login() {
         <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
             <span className='text-gray-200'><FaUserAlt/></span>
             <input className="pl-2 outline-none border-none" 
-            type="text" 
+            type="password" 
             name="password" 
             value={inputs.password || ""} 
             onChange={handleChange} />
