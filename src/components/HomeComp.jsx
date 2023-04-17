@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { hotelData } from '../DataSet'
 import HotelRooms from './HotelRooms'
 
 export default function HomeComp({categories,filterItems,menuItem}) {
- 
+
 console.log(categories)
+const [products, setProducts] = useState(menuItem);
+const [searchVal, setSearchVal] = useState("");
+function handleSearchClick() {
+
+  console.log("handle search clicked")
+
+    if (searchVal === "") { 
+      setProducts(menuItem);
+       return; 
+      }
+    const filterBySearch = menuItem.filter((item) => {
+        if (item.title.toLowerCase().includes(searchVal.toLowerCase() )|| item.details.toLowerCase().includes(searchVal.toLowerCase() )
+            ) {
+               return item; 
+              }
+    })
+    setProducts(filterBySearch);
+}
 
 
   return (
@@ -12,8 +30,8 @@ console.log(categories)
         <div className='mt-[100px]'>
            <div className=''>
                 <div className='flex flex-row items-center  md:w-[50%] xsm:w-[80%] mx-auto'>
-                    <input className='p-3 flex w-full rounded-md text-black' type='email' placeholder='.....'/>
-                    <button className=' bg-blue-900 text-white rounded-md font-medium  h-full my-1 ml-1 px-3 py-3'>Search</button> 
+                    <input className='p-3 flex w-full rounded-md text-black' type='email' placeholder='.....' onChange={e => setSearchVal(e.target.value)}/>
+                    <button className=' bg-blue-900 text-white rounded-md font-medium  h-full my-1 ml-1 px-3 py-3' onClick={handleSearchClick}>Search</button> 
                 </div>
             </div>
         </div>
@@ -26,7 +44,7 @@ console.log(categories)
         </div>
     <div>
         {
-            menuItem.map((hotel)=>{
+            products.map((hotel)=>{
             return(
             // <div key={hotel.id}> 
               <HotelRooms hotel={hotel} key={hotel.id}/>
