@@ -25,7 +25,7 @@ export default function Login() {
     logIn(inputs.username);
     setInputs({})
     console.log(logIn, "inputs now")
-    navigate('/')
+    navigate('/home')
   }
 
  
